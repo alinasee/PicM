@@ -43,9 +43,10 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         return CGSize(width: widthCell, height: heightCell )
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
-//        present(photoVC, animated: true)
-//        photoVC.image = effectsArray[indexPath.item]
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
+        present(photoVC, animated: true)
+//        photoVC.effectPicImage.image = UIImage(named: effectsArray[indexPath.item].image)
+        photoVC.effect = effectsArray[indexPath.row]
+    }
 }
