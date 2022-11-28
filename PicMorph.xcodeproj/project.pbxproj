@@ -17,16 +17,16 @@
 		8468C7132930E9900060335B /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C7122930E9900060335B /* BarController.swift */; };
 		8468C71E2930EA700060335B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C71C2930EA700060335B /* HomeVC.swift */; };
 		8468C71F2930EA700060335B /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C71D2930EA700060335B /* HomeVC.xib */; };
-		8468C7242930EAC80060335B /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C7222930EAC80060335B /* PhotoVC.swift */; };
-		8468C7252930EAC80060335B /* PhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C7232930EAC80060335B /* PhotoVC.xib */; };
 		8468C7292930EB180060335B /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C7272930EB180060335B /* ResultVC.swift */; };
 		8468C72A2930EB180060335B /* ResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C7282930EB180060335B /* ResultVC.xib */; };
-		8468C72D2930EB300060335B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C72B2930EB300060335B /* HistoryVC.swift */; };
-		8468C72E2930EB300060335B /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C72C2930EB300060335B /* HistoryVC.xib */; };
 		8468C7312930EB6B0060335B /* SavedPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C72F2930EB6B0060335B /* SavedPicVC.swift */; };
 		8468C7322930EB6B0060335B /* SavedPicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C7302930EB6B0060335B /* SavedPicVC.xib */; };
 		8468C7362930ECAB0060335B /* EffectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C7342930ECAB0060335B /* EffectCell.swift */; };
 		8468C7372930ECAB0060335B /* EffectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C7352930ECAB0060335B /* EffectCell.xib */; };
+		8468C73B293106E10060335B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C739293106E10060335B /* HistoryVC.swift */; };
+		8468C73C293106E10060335B /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C73A293106E10060335B /* HistoryVC.xib */; };
+		8468C744293128A40060335B /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C742293128A40060335B /* PhotoVC.swift */; };
+		8468C745293128A40060335B /* PhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C743293128A40060335B /* PhotoVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,16 +43,16 @@
 		8468C7122930E9900060335B /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		8468C71C2930EA700060335B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		8468C71D2930EA700060335B /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		8468C7222930EAC80060335B /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
-		8468C7232930EAC80060335B /* PhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoVC.xib; sourceTree = "<group>"; };
 		8468C7272930EB180060335B /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		8468C7282930EB180060335B /* ResultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultVC.xib; sourceTree = "<group>"; };
-		8468C72B2930EB300060335B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
-		8468C72C2930EB300060335B /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		8468C72F2930EB6B0060335B /* SavedPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPicVC.swift; sourceTree = "<group>"; };
 		8468C7302930EB6B0060335B /* SavedPicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedPicVC.xib; sourceTree = "<group>"; };
 		8468C7342930ECAB0060335B /* EffectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCell.swift; sourceTree = "<group>"; };
 		8468C7352930ECAB0060335B /* EffectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectCell.xib; sourceTree = "<group>"; };
+		8468C739293106E10060335B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		8468C73A293106E10060335B /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
+		8468C742293128A40060335B /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		8468C743293128A40060335B /* PhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoVC.xib; sourceTree = "<group>"; };
 		A6D75D52897260BE1531FFBA /* Pods-PicMorph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMorph.debug.xcconfig"; path = "Target Support Files/Pods-PicMorph/Pods-PicMorph.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8468C7162930E9EA0060335B /* HomeVC */,
-				8468C7172930E9F30060335B /* PhotoVC */,
+				8468C7412931286F0060335B /* PhotoVC */,
 				8468C7262930EAFE0060335B /* ResultVC */,
 			);
 			path = HomeBar;
@@ -158,7 +158,7 @@
 		8468C7152930E9D10060335B /* HistoryBar */ = {
 			isa = PBXGroup;
 			children = (
-				8468C71A2930EA2E0060335B /* HistoryVC */,
+				8468C738293106BB0060335B /* HistoryVC */,
 				8468C71B2930EA460060335B /* SavedPicVC */,
 			);
 			path = HistoryBar;
@@ -171,24 +171,6 @@
 				8468C71D2930EA700060335B /* HomeVC.xib */,
 			);
 			path = HomeVC;
-			sourceTree = "<group>";
-		};
-		8468C7172930E9F30060335B /* PhotoVC */ = {
-			isa = PBXGroup;
-			children = (
-				8468C7222930EAC80060335B /* PhotoVC.swift */,
-				8468C7232930EAC80060335B /* PhotoVC.xib */,
-			);
-			path = PhotoVC;
-			sourceTree = "<group>";
-		};
-		8468C71A2930EA2E0060335B /* HistoryVC */ = {
-			isa = PBXGroup;
-			children = (
-				8468C72B2930EB300060335B /* HistoryVC.swift */,
-				8468C72C2930EB300060335B /* HistoryVC.xib */,
-			);
-			path = HistoryVC;
 			sourceTree = "<group>";
 		};
 		8468C71B2930EA460060335B /* SavedPicVC */ = {
@@ -216,6 +198,24 @@
 				8468C7352930ECAB0060335B /* EffectCell.xib */,
 			);
 			path = EffectCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		8468C738293106BB0060335B /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				8468C739293106E10060335B /* HistoryVC.swift */,
+				8468C73A293106E10060335B /* HistoryVC.xib */,
+			);
+			path = HistoryVC;
+			sourceTree = "<group>";
+		};
+		8468C7412931286F0060335B /* PhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				8468C742293128A40060335B /* PhotoVC.swift */,
+				8468C743293128A40060335B /* PhotoVC.xib */,
+			);
+			path = PhotoVC;
 			sourceTree = "<group>";
 		};
 		AB89800A6D12B3C8DB7889D4 /* Frameworks */ = {
@@ -289,11 +289,11 @@
 				8468C7042930E6390060335B /* LaunchScreen.storyboard in Resources */,
 				8468C71F2930EA700060335B /* HomeVC.xib in Resources */,
 				8468C7012930E6390060335B /* Assets.xcassets in Resources */,
-				8468C7252930EAC80060335B /* PhotoVC.xib in Resources */,
+				8468C745293128A40060335B /* PhotoVC.xib in Resources */,
+				8468C73C293106E10060335B /* HistoryVC.xib in Resources */,
 				8468C6FF2930E6380060335B /* Main.storyboard in Resources */,
 				8468C72A2930EB180060335B /* ResultVC.xib in Resources */,
 				8468C7372930ECAB0060335B /* EffectCell.xib in Resources */,
-				8468C72E2930EB300060335B /* HistoryVC.xib in Resources */,
 				8468C7322930EB6B0060335B /* SavedPicVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,13 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468C6F82930E6380060335B /* AppDelegate.swift in Sources */,
+				8468C73B293106E10060335B /* HistoryVC.swift in Sources */,
 				8468C71E2930EA700060335B /* HomeVC.swift in Sources */,
-				8468C72D2930EB300060335B /* HistoryVC.swift in Sources */,
+				8468C744293128A40060335B /* PhotoVC.swift in Sources */,
 				8468C7102930E9090060335B /* EffectModel.swift in Sources */,
 				8468C6FA2930E6380060335B /* SceneDelegate.swift in Sources */,
 				8468C7292930EB180060335B /* ResultVC.swift in Sources */,
 				8468C7132930E9900060335B /* BarController.swift in Sources */,
-				8468C7242930EAC80060335B /* PhotoVC.swift in Sources */,
 				8468C7362930ECAB0060335B /* EffectCell.swift in Sources */,
 				8468C7312930EB6B0060335B /* SavedPicVC.swift in Sources */,
 			);

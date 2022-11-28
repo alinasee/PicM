@@ -28,7 +28,7 @@ class EffectModel {
         let sixthEffect = Effect(name: "Сomics", image: "ef6")
         let seventhEffect = Effect(name: "Disney", image: "ef7")
         let eighthEffect = Effect(name: "Artistic", image: "ef8")
-        let ninthEffect = Effect(name: "Aesthetic", image: "eа9")
+        let ninthEffect = Effect(name: "Aesthetic", image: "ef9")
         let tenthEffect = Effect(name: "Sensual", image: "ef10")
         let eleventhEffect = Effect(name: "Arcane", image: "ef11")
         

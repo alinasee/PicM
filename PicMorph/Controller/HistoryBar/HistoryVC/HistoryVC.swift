@@ -1,5 +1,5 @@
 //
-//  History.swift
+//  HistoryVC.swift
 //  PicMorph
 //
 //  Created by Alina Sitsko on 25.11.22.

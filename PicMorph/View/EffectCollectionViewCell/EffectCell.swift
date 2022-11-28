@@ -15,8 +15,10 @@ class EffectCell: UICollectionViewCell {
     
     var effect: Effect? {
         didSet {
-            effectLabel.text = effect?.name
             backView.backgroundColor = UIColor.systemGray3
+            backView.layer.cornerRadius = 30
+            imageView.layer.cornerRadius = 30
+            effectLabel.text = effect?.name
             if let image = effect?.image {
                 imageView.image = UIImage(named: image)
             }
