@@ -45,8 +45,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photoVC = PhotoVC(nibName: String(describing: PhotoVC.self), bundle: nil)
-        present(photoVC, animated: true)
-//        photoVC.effectPicImage.image = UIImage(named: effectsArray[indexPath.item].image)
         photoVC.effect = effectsArray[indexPath.row]
+        present(photoVC, animated: true)
     }
 }

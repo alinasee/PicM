@@ -27,6 +27,7 @@
 		8468C73C293106E10060335B /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C73A293106E10060335B /* HistoryVC.xib */; };
 		8468C744293128A40060335B /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C742293128A40060335B /* PhotoVC.swift */; };
 		8468C745293128A40060335B /* PhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C743293128A40060335B /* PhotoVC.xib */; };
+		8468C749293506FF0060335B /* PostApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C748293506FF0060335B /* PostApiResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		8468C73A293106E10060335B /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		8468C742293128A40060335B /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		8468C743293128A40060335B /* PhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoVC.xib; sourceTree = "<group>"; };
+		8468C748293506FF0060335B /* PostApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApiResponse.swift; sourceTree = "<group>"; };
 		A6D75D52897260BE1531FFBA /* Pods-PicMorph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMorph.debug.xcconfig"; path = "Target Support Files/Pods-PicMorph/Pods-PicMorph.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8468C70F2930E9090060335B /* EffectModel.swift */,
+				8468C748293506FF0060335B /* PostApiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				8468C744293128A40060335B /* PhotoVC.swift in Sources */,
 				8468C7102930E9090060335B /* EffectModel.swift in Sources */,
 				8468C6FA2930E6380060335B /* SceneDelegate.swift in Sources */,
+				8468C749293506FF0060335B /* PostApiResponse.swift in Sources */,
 				8468C7292930EB180060335B /* ResultVC.swift in Sources */,
 				8468C7132930E9900060335B /* BarController.swift in Sources */,
 				8468C7362930ECAB0060335B /* EffectCell.swift in Sources */,

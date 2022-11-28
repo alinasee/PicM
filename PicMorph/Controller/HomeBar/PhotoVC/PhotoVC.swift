@@ -9,17 +9,11 @@ import UIKit
 
 class PhotoVC: UIViewController {
     
-    var effect: Effect?{
-        didSet {
-            if let image = effect?.image {
-                effectPicImage.image = UIImage(named: image)
-            }
-        }
-    }
-    var morphImage: UIImage?
-    let errorPic = UIImage(named: "errorPic")!
-    var imageBase64Received: UIImage?
-    var sessionHash: String!
+    private var effect: Effect?
+    private var morphImage: UIImage?
+    private let errorPic = UIImage(named: "errorPic")!
+    private var imageBase64Received: UIImage?
+    private var sessionHash: String!
     static var imageBase64toSend: String!
     
     @IBOutlet weak var effectPicImage: UIImageView!
@@ -28,6 +22,7 @@ class PhotoVC: UIViewController {
     @IBOutlet weak var activityRing: UIActivityIndicatorView!
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var morphButton: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -57,7 +52,7 @@ class PhotoVC: UIViewController {
     @IBAction func morphAction(_ sender: Any) {
     }
     
-
+    
 }
 
 private extension PhotoVC {
@@ -66,14 +61,19 @@ private extension PhotoVC {
         effectPicImage .layer.cornerRadius = 8
         effectPicImage.layer.borderWidth = 1
         effectPicImage.layer.borderColor = UIColor.darkGray.cgColor
+        if let image = effect?.image {
+            effectPicImage.image = UIImage(named: image) }
+        
         backImage.image = UIImage(named: "placeholder-1")
         backImage.layer.cornerRadius = 8
         backImage.layer.borderWidth = 2
         backImage.layer.borderColor = UIColor.systemGray2.cgColor
         backLabel.textColor = UIColor.systemGray
+        
         morphButton.layer.cornerRadius = 8
         morphButton.layer.borderWidth = 1
         morphButton.layer.borderColor = UIColor.systemGray2.cgColor
+        
         chosenPhotoImage.layer.cornerRadius = 8
         chosenPhotoImage.layer.borderWidth = 1
         chosenPhotoImage.layer.borderColor = UIColor.systemGray2.cgColor
@@ -89,31 +89,27 @@ private extension PhotoVC {
         }
         sessionHash = randomString
     }
-    
-    func autofixImageOrientation(_ image: UIImage) -> UIImage {
+        
+    func convertImageToBase64(){
+        guard let image = morphImage else { return }
         UIGraphicsBeginImageContext(image.size)
         image.draw(at: .zero)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage ?? image
-    }
-    
-    func convertImageToBase64(){
-        guard let image = morphImage else { return }
-        let rotatedImage = autofixImageOrientation(image)
-        let imageData = rotatedImage.jpegData(compressionQuality: 1)
-        PhotoVC.imageBase64toSend = imageData?.base64EncodedString()
-        print( PhotoVC.imageBase64toSend ?? "Could not encode image to Base64")
+        if let finalImage = newImage {
+            let imageData = finalImage.jpegData(compressionQuality: 1)
+            PhotoVC.imageBase64toSend = imageData?.base64EncodedString()
+            print( PhotoVC.imageBase64toSend ?? "Could not encode image to Base64")
+        }
     }
     
     func convertBase64ToImage(base64String: String) -> UIImage {
         guard let stringData = Data(base64Encoded: base64String),
-              let uiImage = UIImage(data: stringData) else {
-            return errorPic}
-        return uiImage
+              let image = UIImage(data: stringData) else {
+            return errorPic }
+        return image
         
     }
-    
 }
 
 extension PhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
