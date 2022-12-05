@@ -9,11 +9,14 @@ import UIKit
 
 class PhotoVC: UIViewController {
     
-    private var effect: Effect?
+    var effect: Effect?
+    
     private var morphImage: UIImage?
     private let errorPic = UIImage(named: "errorPic")!
+//    можно будет удалить свойство выше
     private var imageBase64Received: UIImage?
     private var sessionHash: String!
+    
     static var imageBase64toSend: String!
     
     @IBOutlet weak var effectPicImage: UIImageView!
@@ -50,6 +53,7 @@ class PhotoVC: UIViewController {
     }
     
     @IBAction func morphAction(_ sender: Any) {
+        sendPayloadToRequest()
     }
     
     
@@ -110,6 +114,127 @@ private extension PhotoVC {
         return image
         
     }
+    
+    func sendPayloadToRequest() {
+        self.activityRing.startAnimating()
+        if let effectPayload = effect?.payloadVersion {
+            switch effectPayload {
+            case "version 1 (🔺 stylization, 🔻 robustness)", "version 2 (🔺 robustness,🔻 stylization)":
+                animeGanRequest(sessionHash: sessionHash, payloadVersion: effectPayload)
+            case "version 0.2", "version 0.3", "version 0.4":
+                arcaneGanRequest(sessionHash: sessionHash, payloadVersion: effectPayload)
+            case "JoJo", "Disney", "Arcane Multi", "Art", "Spider-Verse":
+                jojoGanRequest(sessionHash: sessionHash, payloadVersion: effectPayload)
+            default:
+                print ("error, payload did not find")
+            }
+        }
+        
+    }
+    
+    func animeGanRequest(sessionHash: String, payloadVersion: String) {
+        NetworkManager.postAnimeGan (sessionHash: sessionHash, payloadVersion: payloadVersion) { responce in
+            guard let hash  = responce.hash else { return }
+            var counter = 0
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { timer in
+                if counter <= 6 {
+                    NetworkManager.statusAnimeGan (hash: hash) { [weak self] statusResponse in
+                        if statusResponse.status == "COMPLETE" {
+                            self?.activityRing.stopAnimating()
+                            timer.invalidate()
+                            guard let receivedArray = statusResponse.data?.data else { return }
+                            let string = receivedArray[0]
+                            let beginningOfSentence = string.lastIndex(of: ",")!
+                            let slycedSentence = string[string.index(beginningOfSentence, offsetBy: 1)...]
+                            let realString = String(slycedSentence)
+                            let image = self?.convertBase64ToImage(base64String: realString )
+                            let resultVC = ResultVC(nibName: (String(describing: ResultVC.self)), bundle: nil)
+                            resultVC.image = image
+                            self?.present(resultVC, animated: true)
+                        } else {
+                            let alert  = UIAlertController(title: nil, message: "Проблемы соединения с сервером", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "Продолжить", style: .default) { _ in self?.sendPayloadToRequest()
+                            }
+                            let cancelAction = UIAlertAction(title: "Отменить", style: .destructive) { _ in
+                                self?.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                            }
+                            alert.addAction(okAction)
+                            alert.addAction(cancelAction)
+                            self?.present(alert, animated: true)
+                        }
+                    } failure: {
+                        print("все плохо")
+                        counter += 1
+                    }
+                } else {
+                    timer.invalidate()}
+            }
+        } failure: {
+            print("хэш не получен")
+        }
+    }
+    
+    func arcaneGanRequest(sessionHash: String, payloadVersion: String) {
+        NetworkManager.postArcaneGan (sessionHash: sessionHash, payloadVersion: payloadVersion) { responce in
+            guard let hash  = responce.hash else { return }
+            var counter = 0
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+                if counter <= 6 {
+                    NetworkManager.statusArcaneGan (hash: hash) { [weak self] statusResponse in
+                        if statusResponse.status == "COMPLETE" {
+                            self?.activityRing.stopAnimating()
+                            timer.invalidate()
+                            guard let receivedArray = statusResponse.data?.data else { return }
+                            let string = receivedArray[0]
+                            let beginningOfSentence = string.lastIndex(of: ",")!
+                            let slycedSentence = string[string.index(beginningOfSentence, offsetBy: 1)...]
+                            let realString = String(slycedSentence)
+                            let image = self?.convertBase64ToImage(base64String: realString )
+                            let resultVC = ResultVC(nibName: (String(describing: ResultVC.self)), bundle: nil)
+                            resultVC.image = image
+                            self?.present(resultVC, animated: true)
+                        } else {
+                            let alert  = UIAlertController(title: nil, message: "Проблемы соединения с сервером", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "Продолжить", style: .default) { _ in self?.sendPayloadToRequest()
+                            }
+                            let cancelAction = UIAlertAction(title: "Отменить", style: .destructive) { _ in
+                                self?.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                            }
+                            alert.addAction(okAction)
+                            alert.addAction(cancelAction)
+                            self?.present(alert, animated: true)
+                        }
+                    } failure: {
+                        print("все плохо")
+                        counter += 1
+                    }
+                } else {
+                    timer.invalidate()}
+            }
+        } failure: {
+            print("хэш не получен")
+        }
+    }
+    
+    func jojoGanRequest(sessionHash: String, payloadVersion: String) {
+        NetworkManager.postJojoGan(sessionHash: sessionHash, payloadVersion: payloadVersion) { response in
+            guard let receivedArray = response.data else { return }
+            self.activityRing.stopAnimating()
+            let string = receivedArray[0]
+            let beginningOfSentence = string.lastIndex(of: ",")!
+            let slycedSentence = string[string.index(beginningOfSentence, offsetBy: 1)...]
+            let realString = String(slycedSentence)
+            let image = self.convertBase64ToImage(base64String: realString )
+            let resultVC = ResultVC(nibName: (String(describing: ResultVC.self)), bundle: nil)
+            resultVC.image = image
+            self.present(resultVC, animated: true)
+            
+        } failure: {
+            print("ответ не получен")
+        }
+    }
+  
+    
 }
 
 extension PhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

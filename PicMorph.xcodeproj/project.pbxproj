@@ -28,6 +28,9 @@
 		8468C744293128A40060335B /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C742293128A40060335B /* PhotoVC.swift */; };
 		8468C745293128A40060335B /* PhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8468C743293128A40060335B /* PhotoVC.xib */; };
 		8468C749293506FF0060335B /* PostApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C748293506FF0060335B /* PostApiResponse.swift */; };
+		8468C74B293508360060335B /* MorphApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C74A293508360060335B /* MorphApi.swift */; };
+		8468C74E29350C9A0060335B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C74D29350C9A0060335B /* NetworkManager.swift */; };
+		8468C750293542740060335B /* Base64Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C74F293542730060335B /* Base64Convert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		8468C742293128A40060335B /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		8468C743293128A40060335B /* PhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoVC.xib; sourceTree = "<group>"; };
 		8468C748293506FF0060335B /* PostApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApiResponse.swift; sourceTree = "<group>"; };
+		8468C74A293508360060335B /* MorphApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorphApi.swift; sourceTree = "<group>"; };
+		8468C74D29350C9A0060335B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8468C74F293542730060335B /* Base64Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Convert.swift; sourceTree = "<group>"; };
 		A6D75D52897260BE1531FFBA /* Pods-PicMorph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMorph.debug.xcconfig"; path = "Target Support Files/Pods-PicMorph/Pods-PicMorph.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +122,7 @@
 		8468C70B2930E8490060335B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8468C74C29350BD20060335B /* BeckendApi */,
 				8468C70F2930E9090060335B /* EffectModel.swift */,
 				8468C748293506FF0060335B /* PostApiResponse.swift */,
 			);
@@ -216,9 +223,19 @@
 			isa = PBXGroup;
 			children = (
 				8468C742293128A40060335B /* PhotoVC.swift */,
+				8468C74F293542730060335B /* Base64Convert.swift */,
 				8468C743293128A40060335B /* PhotoVC.xib */,
 			);
 			path = PhotoVC;
+			sourceTree = "<group>";
+		};
+		8468C74C29350BD20060335B /* BeckendApi */ = {
+			isa = PBXGroup;
+			children = (
+				8468C74A293508360060335B /* MorphApi.swift */,
+				8468C74D29350C9A0060335B /* NetworkManager.swift */,
+			);
+			path = BeckendApi;
 			sourceTree = "<group>";
 		};
 		AB89800A6D12B3C8DB7889D4 /* Frameworks */ = {
@@ -351,11 +368,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8468C6F82930E6380060335B /* AppDelegate.swift in Sources */,
+				8468C74B293508360060335B /* MorphApi.swift in Sources */,
 				8468C73B293106E10060335B /* HistoryVC.swift in Sources */,
+				8468C74E29350C9A0060335B /* NetworkManager.swift in Sources */,
 				8468C71E2930EA700060335B /* HomeVC.swift in Sources */,
 				8468C744293128A40060335B /* PhotoVC.swift in Sources */,
 				8468C7102930E9090060335B /* EffectModel.swift in Sources */,
 				8468C6FA2930E6380060335B /* SceneDelegate.swift in Sources */,
+				8468C750293542740060335B /* Base64Convert.swift in Sources */,
 				8468C749293506FF0060335B /* PostApiResponse.swift in Sources */,
 				8468C7292930EB180060335B /* ResultVC.swift in Sources */,
 				8468C7132930E9900060335B /* BarController.swift in Sources */,
@@ -516,6 +536,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +566,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
